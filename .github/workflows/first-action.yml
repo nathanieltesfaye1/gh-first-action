@@ -1,0 +1,19 @@
+# Giving a name to our workflow
+name: First Workflow
+
+# Define when this workflow should be executed (i.e. 'triggered') - define the event(s) that should trigger this workflow to run.
+on: workflow_dispatch
+
+# Here, we define the actual WORK (i.e. 'jobs') that should be ran when the 'trigger' is 'triggered' - we define a list of jobs
+jobs:
+  # Here is the first job in our list. This is a CUSTOM name that we've defined ourselves
+  first-job:
+    # Here, we define a GitHub actions runner.
+    runs-on: ubuntu-latest
+    # Here, we define the steps that should be executed in this job
+    steps:
+      # Define a list of steps
+      - name: Print greeting
+        run: echo "Hello World!"
+      - name: Print goodbye
+        run: echo "Done - bye!"
